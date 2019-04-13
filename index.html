@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>toggle forms</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto");
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+      }
+      body {
+        background: #e9eaea;
+        font-family: "Roboto", sans-serif;
+      }
+      .container {
+        width: 450px;
+        margin: 70px auto;
+      }
+      .signup,
+      .login {
+        width: 50%;
+        background: #fff;
+        height: 60px;
+        float: left;
+        text-align: center;
+        line-height: 60px;
+        text-transform: uppercase;
+      }
+      .signup-form,
+      .login-form {
+        background: #fff;
+        box-sizing: border-box;
+        padding: 40px;
+        clear: both;
+        width: 100%;
+        height: 400px;
+      }
+      .input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        margin-bottom: 25px;
+        border: 2px solid #e9eaea;
+        color: #3e3e40;
+        font-size: 14px;
+        outline: none;
+        transition: all 0.5s ease;
+      }
+      .input:focus {
+        border: 2px solid #34b3a0;
+      }
+      .btn {
+        width: 100%;
+        background-color: #34b3a0;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 1px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+      span a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="signup">Sign up</div>
+      <div class="login">Login</div>
+
+      <form action="" class="signup-form">
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Your Email Adress"
+          class="input"
+        />
+        <br />
+        <input type="text" name="" id="" placeholder="UserName" class="input" />
+        <br />
+        <input
+          type="password"
+          name=""
+          id=""
+          placeholder="password"
+          class="input"
+        />
+        <div class="btn">create Account</div>
+      </form>
+      <!-- ////////login form///// -->
+      <form action="" class="login-form">
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Email or UserName"
+          class="input"
+        />
+        <br />
+        <input
+          type="password"
+          name=""
+          id=""
+          placeholder="password"
+          class="input"
+        />
+        <div class="btn">log in</div>
+        <span><a href="">I Forgot my Password</a></span>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".login-form").hide();
+        $(".login").css("background", "none");
+        $(".login").click(function() {
+          $(".signup-form").hide();
+          $(".login-form").show();
+          $(".signup").css("background", "none");
+          $(".login").css("background", "#fff");
+        });
+
+        $(".signup").click(function() {
+          $(".login-form").hide();
+          $(".signup-form").show();
+          $(".login").css("background", "none");
+          $(".signup").css("background", "#fff");
+        });
+        $(".btn").click(function() {
+            $(".input").val("");
+        });
+      });
+    </script>
+  </body>
+</html>
